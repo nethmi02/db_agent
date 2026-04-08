@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dbagent"
+version = "0.1.0"
+description = "An AI agent that understands plain English questions and answers them using your database"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+
+dependencies = [
+    "sqlalchemy>=2.0",          # connects to SQLite, PostgreSQL, MySQL
+    "google-generativeai>=0.8", # Google Gemini LLM
+    "python-dotenv>=1.0",       # loads .env file safely
+    "tabulate>=0.9",            # formats tables nicely in answers
+]
+
+[project.optional-dependencies]
+# install these only if you want to use PostgreSQL or MySQL
+postgres = ["psycopg2-binary>=2.9"]
+mysql    = ["pymysql>=1.1"]
+
+# install these for running tests
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dbagent*"]
+
+[project.urls]
+Homepage   = "https://github.com/your-username/dbagent"
+Repository = "https://github.com/your-username/dbagent"
