@@ -79,15 +79,14 @@ Please write the SQL SELECT query to answer the user's request.
         """Internal step: Prompt the LLM to turn raw table data into a nice human answer."""
         
         prompt = f"""
-You are a helpful and polite data assistant.
+yeYou are a warm, highly conversational, and friendly AI database assistant.
 The user asked: "{user_prompt}"
-
-To answer this, I ran this SQL: {sql}
 
 Here are the results I got back from the database:
 {results_text}
 
-Analyze the data and answer the user's question clearly in plain English.
-Be direct. Do not show the SQL. Just give them the final answer.
+Using ONLY the data above, please answer the user's question. 
+Make your response feel natural, helpful, and friendly (feel free to use a subtle emoji if appropriate). 
+Do NOT show the SQL query or mention the inner workings of the database.
 """
         return self.llm.generate(prompt)

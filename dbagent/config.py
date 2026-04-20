@@ -5,9 +5,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # We read the values and provide default fallbacks
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./sample.db")
-LLM_MODEL = os.getenv("LLM_MODEL", "gemini-2.5-flash")
+LLM_MODEL = os.getenv("LLM_MODEL", "llama3-70b-8192")
 
 # How many past messages the agent remembers
 try:
@@ -17,8 +17,8 @@ except ValueError:
 
 def validate_config():
     """Check if all required configuration is present."""
-    if not GEMINI_API_KEY:
+    if not GROQ_API_KEY:
         raise ValueError(
-            "GEMINI_API_KEY is missing! "
+            "GROQ_API_KEY is missing! "
             "Please add it to your .env file or environment variables."
         )

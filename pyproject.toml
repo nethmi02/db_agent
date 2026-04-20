@@ -12,9 +12,11 @@ license = { text = "MIT" }
 
 dependencies = [
     "sqlalchemy>=2.0",          # connects to SQLite, PostgreSQL, MySQL
-    "google-generativeai>=0.8", # Google Gemini LLM
+    "groq>=0.5.0",              # Groq API for LLaMA models
     "python-dotenv>=1.0",       # loads .env file safely
     "tabulate>=0.9",            # formats tables nicely in answers
+    "fastapi>=0.100",           # API backend
+    "uvicorn[standard]>=0.20",  # ASGI server for FastAPI
 ]
 
 [project.optional-dependencies]

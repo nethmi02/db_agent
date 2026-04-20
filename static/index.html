@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBAgent Chatbot</title>
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <!-- Main Website Content Wrapper -->
+    <main class="page-content">
+        <h1>Welcome to Your Database Assistant</h1>
+        <p>This is your main application page. The chatbot is floating in the bottom right corner.</p>
+        <p>Click on the chat icon to ask questions about your data!</p>
+    </main>
+
+    <!-- Floating Chatbot UI -->
+    <div id="chatbot-container">
+        <!-- Chat Window -->
+        <div id="chat-window" class="chat-window hidden">
+            <!-- Header -->
+            <div class="chat-header">
+                <div class="header-info">
+                    <i class="fa-solid fa-robot bot-icon"></i>
+                    <span>Database Assistant</span>
+                </div>
+                <button id="close-chat" class="icon-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <!-- Messages Area -->
+            <div id="chat-messages" class="chat-messages">
+                <!-- Messages will be injected here by JS -->
+                <!-- Example of initial bot message (will be handled by JS later) -->
+            </div>
+            
+            <!-- Input Area -->
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off" />
+                <button id="send-message" class="icon-btn send-btn">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Floating Toggle Button -->
+        <button id="chatbot-toggle" class="chatbot-toggle">
+            <i class="fa-solid fa-message"></i>
+        </button>
+    </div>
+
+    <!-- Script for functionality (Phase 3) -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
